@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
-    // padding: 20,
-    // backgroundColor: "#fe019a",
+    paddingBottom: 350,
+    backgroundColor: "#ff148a",
   },
   button: {
     display: "block",
@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
+  },
+  btnStyle: {
+    backgroundColor: "#ffffff",
+    color: "#ff148a",
+    fontSize: "1.2em",
   },
 }));
 
@@ -53,21 +58,22 @@ function Login(props) {
   return (
     <div>
       <Header />
-      <div>
+      <div style={{ backgroundColor: "#ff148a" }}>
         <Container>
           <div
             style={{
               display: "flex",
               textAlign: "center",
               justifyContent: "center",
-              marginTop: 40,
+              //   marginTop: 40,
             }}
           >
             <Typography
               style={{
                 padding: 20,
+                marginTop: 40,
                 fontSize: "2.2em",
-                // color: "#ffffff",
+                color: "#ffffff",
               }}
             >
               Welcome back !
@@ -109,13 +115,15 @@ function Login(props) {
                       helperText={
                         passwordErr ? "please enter valid Password" : ""
                       }
+                      type="password"
                       fullWidth
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <Button
                       variant="contained"
-                      color="primary"
+                      //   color="primary"
+                      className={classes.btnStyle}
                       size="medium"
                       fullWidth
                       onClick={handleChange}

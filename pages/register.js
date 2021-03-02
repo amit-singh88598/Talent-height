@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
-    // padding: 20,
-    // backgroundColor: "#fe019a",
+    paddingBottom: 150,
+    backgroundColor: "#ff148a",
   },
   button: {
     display: "block",
@@ -34,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
+  },
+  btnStyle: {
+    backgroundColor: "#ffffff",
+    color: "#ff148a",
+    fontSize: "1.2em",
+  },
+  textFieldStyle: {
+    color: "#ffffff",
   },
 }));
 
@@ -84,21 +92,20 @@ function Register(props) {
   return (
     <div>
       <Header />
-      <div>
+      <div style={{ backgroundColor: "#ff148a" }}>
         <Container>
           <div
             style={{
               display: "flex",
               textAlign: "center",
               justifyContent: "center",
-              marginTop: 40,
             }}
           >
             <Typography
               style={{
-                // padding: 20,
+                marginTop: 40,
                 fontSize: "2.2em",
-                // color: "#ffffff",
+                color: "#ffffff",
               }}
             >
               Let's get started!
@@ -111,9 +118,10 @@ function Register(props) {
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <TextField
                       id="outlined-basic"
-                      label="User Name"
+                      // label="User Name"
                       variant="outlined"
-                      color="primary"
+                      // color="primary"
+                      className={classes.textFieldStyle}
                       style={{ marginTop: 10 }}
                       onChange={(event) => {
                         setUserNameErr(false);
@@ -124,13 +132,14 @@ function Register(props) {
                         userNameErr ? "Please enter valid User Name" : ""
                       }
                       fullWidth
+                      placeholder="User Name"
                       autoFocus
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <TextField
                       id="outlined-basic"
-                      label="Email"
+                      // label="Email"
                       variant="outlined"
                       color="primary"
                       onChange={(event) => {
@@ -140,12 +149,14 @@ function Register(props) {
                       error={emailErr}
                       helperText={emailErr ? "Please enter valid email" : ""}
                       fullWidth
+                      type="text"
+                      placeholder="Email"
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <TextField
                       id="outlined-basic"
-                      label="Phone"
+                      // label="Phone"
                       variant="outlined"
                       onChange={(event) => {
                         setPhoneErr(false);
@@ -156,12 +167,13 @@ function Register(props) {
                         phoneErr ? "please enter valid Phone no." : ""
                       }
                       fullWidth
+                      // type="number"
+                      placeholder="Phone no."
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <TextField
-                      id="outlined-basic"
-                      label="Password"
+                      // label="Password"
                       variant="outlined"
                       onChange={(event) => {
                         setPasswordErr(false);
@@ -172,12 +184,15 @@ function Register(props) {
                         passwordErr ? "please enter valid Password" : ""
                       }
                       fullWidth
+                      type="password"
+                      id="password"
+                      placeholder="Password"
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <TextField
                       id="outlined-basic"
-                      label="Confirm Password"
+                      // label="Confirm Password"
                       variant="outlined"
                       onChange={(event) => {
                         setPasswordErr(false);
@@ -188,6 +203,8 @@ function Register(props) {
                         passwordErr ? "please enter valid Password" : ""
                       }
                       fullWidth
+                      type="password"
+                      placeholder="Confirm Password"
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
@@ -215,8 +232,9 @@ function Register(props) {
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <Button
                       variant="contained"
-                      color="primary"
-                      size="medium"
+                      className={classes.btnStyle}
+                      // color="primary"
+                      size="large"
                       fullWidth
                       onClick={handleChange}
                     >
