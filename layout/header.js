@@ -10,8 +10,7 @@ import Link from "next/link";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import { Search } from "@material-ui/icons";
-import { fade, InputBase } from "@material-ui/core";
+import SearchBar from "../components/search";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,44 +39,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5em",
     [theme.breakpoints.down("sm")]: {
       fontSize: "1em",
-    },
-  },
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    borderRadius: 50,
-    backgroundColor: "#f5f5f5",
-    "&:hover": {
-      backgroundColor: "#f5f5f5",
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
     },
   },
 }));
@@ -154,19 +115,7 @@ export default function Header() {
             </IconButton>
           </Link>
           <Typography className={classes.titleStyle}>Talent height</Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <Search />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
+          {/* <SearchBar /> */}
           <Typography variant="h6" className={classes.title} />
           <div className={classes.navLink}>
             {navLinks.map((item) => (
@@ -177,6 +126,28 @@ export default function Header() {
               </Link>
             ))}
           </div>
+          {/* <div className={classes.navLink}>
+            {navLinks.map((item) => (
+              <Link href={item.href} key={item.name}>
+                <Button style={{ margin: 5 }} size="small" color="inherit">
+                  {item.name}
+                </Button>
+              </Link>
+            ))}
+            <ListItem>
+              <TreeView
+                className={classes.serviceTree}
+                defaultCollapseIcon={<ExpandMore />}
+                defaultExpandIcon={<ChevronRight />}
+              >
+                <TreeItem nodeId="1" label="Service">
+                  <TreeItem nodeId="2" label="Service 1" />
+                  <TreeItem nodeId="3" label="Service 2" />
+                  <TreeItem nodeId="4" label="Service 3" />
+                </TreeItem>
+              </TreeView>
+            </ListItem>
+          </div> */}
           <IconButton
             edge="start"
             className={classes.toggleButton}
