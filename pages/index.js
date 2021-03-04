@@ -1,4 +1,11 @@
-import { Button, Card, CardContent, Grid, makeStyles } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardContent,
+  Divider,
+  Grid,
+  makeStyles,
+} from "@material-ui/core";
 import HomeVideos from "../components/homeVideos";
 import SearchBar from "../components/search";
 import SideBar from "../components/sideBar";
@@ -22,28 +29,66 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: 20,
   },
+
+  // Mobile View Style
+
+  mobileView: {
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
 }));
 
 export default function Home() {
   const classes = useStyles();
   return (
     <div>
-      <Header />
-      <div className={classes.root}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={2}>
-            <SideBar />
+      <div className={classes.desktopView}>
+        <Header />
+        <div className={classes.root}>
+          <Grid container spacing={2}>
+            <Grid item xs={2} sm={2}>
+              <SideBar />
+            </Grid>
+            <Grid item xs={10} sm={10}>
+              <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
+              <div className={classes.img}>
+                <Status />
+                {/* <ImageOverlay
+                url={props.data.image}
+                onClick={handleImageUpload}
+              /> */}
+              </div>
+              <HomeVideos />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={10}>
-            <div className={classes.searchBar}>
-              <SearchBar />
-            </div>
-            <Status />
-            <HomeVideos />
-          </Grid>
-        </Grid>
+        </div>
+        <Divider />
+        <Footer />
       </div>
-      <Footer />
+
+      <div className={classes.mobileView}>
+        <Header />
+        <div className={classes.root}>
+          <Grid container spacing={2}>
+            <Grid item xs={2} sm={2}>
+              <SideBar />
+            </Grid>
+            <Grid item xs={10} sm={10}>
+              <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
+              <div className={classes.img}>
+                <Status />
+                {/* <ImageOverlay
+                url={props.data.image}
+                onClick={handleImageUpload}
+              /> */}
+              </div>
+              <HomeVideos />
+            </Grid>
+          </Grid>
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }

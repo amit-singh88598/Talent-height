@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Button,
   Card,
   CardActionArea,
@@ -23,106 +24,100 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 10,
   },
   cardStyle: {
-    height: 230,
+    height: 250,
     // backgroundColor: theme.palette.secondary.main,
   },
   scroll: {
     overflowY: "scroll",
     height: 600,
   },
+
+  large: {
+    width: theme.spacing(5),
+    height: theme.spacing(5),
+  },
 }));
 
 const videos = [
   {
-    name: "hdbfjshbfsd",
+    name: "Amit Singh",
     href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    title: "Bad Boys For Life !",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Akash Kumar",
     href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    title: "All time best",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Kamal",
     href:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    title: "Be Unique",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Amit Singh",
     href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    title: "Bad Boys For Life !",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Akash Kumar",
     href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    title: "All time best",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Kamal",
     href:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    title: "Be Unique",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Amit Singh",
     href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    title: "Bad Boys For Life !",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Akash Kumar",
     href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    title: "All time best",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Kamal",
     href:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    title: "Be Unique",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Amit Singh",
     href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    title: "Bad Boys For Life !",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Akash Kumar",
     href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    title: "All time best",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Kamal",
     href:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    title: "Be Unique",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Amit Singh",
     href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    title: "Bad Boys For Life !",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Akash Kumar",
     href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    title: "All time best",
   },
   {
-    name: "hdbfjshbfsd",
+    name: "Kamal",
     href:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
-  },
-  {
-    name: "hdbfjshbfsd",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-  },
-  {
-    name: "hdbfjshbfsd",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
-  },
-  {
-    name: "hdbfjshbfsd",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
-  },
-  {
-    name: "hdbfjshbfsd",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-  },
-  {
-    name: "hdbfjshbfsd",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
-  },
-  {
-    name: "hdbfjshbfsd",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    title: "Be Unique",
   },
 ];
 
@@ -139,23 +134,28 @@ function HomeVideos(props) {
                   <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
-                    height="150"
+                    height="170"
                     image={item.href}
                     title="Contemplative Reptile"
                   />
                 </CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="h2">
-                    Bad Boys For Life !
+                <div style={{ padding: 5, display: "flex" }}>
+                  <Avatar
+                    className={classes.large}
+                    alt="A Sharp"
+                    src="https://miro.medium.com/max/4260/1*uLRHo3iLlP_PYxdd6dX_Lw.jpeg"
+                  />
+                  <Typography style={{ marginLeft: 5 }} variant="body">
+                    {item.title}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {item.name}
-                  </Typography>
-                </CardContent>
+                </div>
+                <Typography
+                  style={{ marginLeft: 50 }}
+                  variant="body"
+                  color="textSecondary"
+                >
+                  {item.name}
+                </Typography>
                 {/* <CardActions>
                   <Button size="small" color="secondary">
                     Share

@@ -115,7 +115,7 @@ export default function Header() {
             </IconButton>
           </Link>
           <Typography className={classes.titleStyle}>Talent height</Typography>
-          {/* <SearchBar /> */}
+          <SearchBar />
           <Typography variant="h6" className={classes.title} />
           <div className={classes.navLink}>
             {navLinks.map((item) => (
@@ -126,28 +126,6 @@ export default function Header() {
               </Link>
             ))}
           </div>
-          {/* <div className={classes.navLink}>
-            {navLinks.map((item) => (
-              <Link href={item.href} key={item.name}>
-                <Button style={{ margin: 5 }} size="small" color="inherit">
-                  {item.name}
-                </Button>
-              </Link>
-            ))}
-            <ListItem>
-              <TreeView
-                className={classes.serviceTree}
-                defaultCollapseIcon={<ExpandMore />}
-                defaultExpandIcon={<ChevronRight />}
-              >
-                <TreeItem nodeId="1" label="Service">
-                  <TreeItem nodeId="2" label="Service 1" />
-                  <TreeItem nodeId="3" label="Service 2" />
-                  <TreeItem nodeId="4" label="Service 3" />
-                </TreeItem>
-              </TreeView>
-            </ListItem>
-          </div> */}
           <IconButton
             edge="start"
             className={classes.toggleButton}
