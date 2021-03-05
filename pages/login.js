@@ -43,8 +43,6 @@ function Login(props) {
   const [userNameErr, setUserNameErr] = useState(false);
   const [passwordErr, setPasswordErr] = useState(false);
 
-  const [data, setData] = useState(null);
-
   const handleChange = async () => {
     if (!regxEmail.test(userName)) {
       setUserNameErr(true);

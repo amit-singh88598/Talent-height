@@ -14,7 +14,7 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   serviceName: {
-    color: "black",
+    color: "#f5f5f5", //black
     fontSize: "1.3em",
   },
   serviceCard: {
