@@ -7,15 +7,18 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
+import axios from "axios";
 import React, { useState } from "react";
+import { regxEmail, regxPassword } from "../regular-Expression";
+import cookies from "js-cookies";
 import Header from "../layout/header";
-import { regxUserName, regxPassword } from "../regular-Expression";
+import Footer from "../layout/footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
-    paddingBottom: 350,
+    paddingBottom: 250,
     backgroundColor: "#ff148a",
   },
   button: {
@@ -42,16 +45,28 @@ function Login(props) {
 
   const [data, setData] = useState(null);
 
-  const handleChange = () => {
-    if (!regxUserName.test(userName)) {
+  const handleChange = async () => {
+    if (!regxEmail.test(userName)) {
       setUserNameErr(true);
     } else if (!regxPassword.test(password)) {
       setPasswordErr(true);
     } else {
-      const temp = data ? data : [];
-      temp.push({ userName, password });
-      setData(temp);
-      console.log(data);
+      const data = { email: userName, password };
+      try {
+        const res = await axios.post(
+          "https://talentheight.herokuapp.com/api/users/login",
+          data
+        );
+        if (res && res.data.isAuth) {
+          //to save token in cookies
+          cookies.setItem("talentHeight", res.data.token, { expires: 3 });
+          alert("login successful");
+        } else {
+          alert("Something went wrong");
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -65,7 +80,6 @@ function Login(props) {
               display: "flex",
               textAlign: "center",
               justifyContent: "center",
-              //   marginTop: 40,
             }}
           >
             <Typography
@@ -137,6 +151,7 @@ function Login(props) {
           </Grid>
         </Container>
       </div>
+      <Footer />
     </div>
   );
 }

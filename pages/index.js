@@ -7,11 +7,12 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import HomeVideos from "../components/homeVideos";
-import SearchBar from "../components/search";
 import SideBar from "../components/sideBar";
 import Status from "../components/status";
 import Footer from "../layout/footer";
 import Header from "../layout/header";
+import { useRouter } from "next/router";
+import { useAuth } from "../auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,54 +42,64 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const { isAuthenticatedUser } = useAuth();
+  const router = useRouter();
   return (
     <div>
-      <div className={classes.desktopView}>
-        <Header />
-        <div className={classes.root}>
-          <Grid container spacing={2}>
-            <Grid item xs={2} sm={2}>
-              <SideBar />
-            </Grid>
-            <Grid item xs={10} sm={10}>
-              <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
-              <div className={classes.img}>
-                <Status />
-                {/* <ImageOverlay
+      {isAuthenticatedUser == false ? (
+        <div>
+          <Button onClick={() => router.push("/login")}>Login first</Button>
+        </div>
+      ) : (
+        <div>
+          <div className={classes.desktopView}>
+            <Header />
+            <div className={classes.root}>
+              <Grid container spacing={2}>
+                <Grid item xs={2} sm={2}>
+                  <SideBar />
+                </Grid>
+                <Grid item xs={10} sm={10}>
+                  <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
+                  <div className={classes.img}>
+                    <Status />
+                    {/* <ImageOverlay
                 url={props.data.image}
                 onClick={handleImageUpload}
               /> */}
-              </div>
-              <HomeVideos />
-            </Grid>
-          </Grid>
-        </div>
-        <Divider />
-        <Footer />
-      </div>
+                  </div>
+                  <HomeVideos />
+                </Grid>
+              </Grid>
+            </div>
+            <Divider />
+            <Footer />
+          </div>
 
-      <div className={classes.mobileView}>
-        <Header />
-        <div className={classes.root}>
-          <Grid container spacing={2}>
-            <Grid item xs={2} sm={2}>
-              <SideBar />
-            </Grid>
-            <Grid item xs={10} sm={10}>
-              <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
-              <div className={classes.img}>
-                <Status />
-                {/* <ImageOverlay
+          <div className={classes.mobileView}>
+            <Header />
+            <div className={classes.root}>
+              <Grid container spacing={2}>
+                <Grid item xs={2} sm={2}>
+                  <SideBar />
+                </Grid>
+                <Grid item xs={10} sm={10}>
+                  <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
+                  <div className={classes.img}>
+                    <Status />
+                    {/* <ImageOverlay
                 url={props.data.image}
                 onClick={handleImageUpload}
               /> */}
-              </div>
-              <HomeVideos />
-            </Grid>
-          </Grid>
+                  </div>
+                  <HomeVideos />
+                </Grid>
+              </Grid>
+            </div>
+            <Footer />
+          </div>
         </div>
-        <Footer />
-      </div>
+      )}
     </div>
   );
 }
