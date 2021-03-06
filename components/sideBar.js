@@ -85,7 +85,7 @@ function SideBar(props) {
             {navLinks.map((item) => (
               <ListItem key={item.name}>
                 <Link href={item.href} key={item.name}>
-                  <Button fullWidth color="black">
+                  <Button fullWidth color="secondary">
                     {item.name}
                   </Button>
                 </Link>

@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import ReactPlayer from "react-player";
 
 const useStyles = makeStyles((theme) => ({
   serviceName: {
@@ -41,82 +42,77 @@ const useStyles = makeStyles((theme) => ({
 const videos = [
   {
     name: "Amit Singh",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://images.indianexpress.com/2017/04/nature-tree_759.jpg",
+    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZnur-mIToGsfW3-Tpg5ouccQd_i5TKiJFQ&usqp=CAU",
+    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
     title: "Be Unique",
   },
 ];
@@ -131,13 +127,22 @@ function HomeVideos(props) {
             <Grid item xs={12} sm={3} key={index}>
               <Card elevation={2} className={classes.cardStyle}>
                 <CardActionArea className={classes.serviceCard}>
-                  <CardMedia
+                  {/* <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     height="170"
                     image={item.href}
                     title="Contemplative Reptile"
+                  > */}
+                  <ReactPlayer
+                    light={true}
+                    // playing={false}
+                    // volume={null}
+                    width="100%"
+                    height="170px"
+                    url={item.href}
                   />
+                  {/* </CardMedia> */}
                 </CardActionArea>
                 <div style={{ padding: 5, display: "flex" }}>
                   <Avatar
@@ -145,14 +150,14 @@ function HomeVideos(props) {
                     alt="A Sharp"
                     src="https://miro.medium.com/max/4260/1*uLRHo3iLlP_PYxdd6dX_Lw.jpeg"
                   />
-                  <Typography style={{ marginLeft: 5 }} variant="body">
+                  <Typography style={{ marginLeft: 5 }} variant="body1">
                     {item.title}
                   </Typography>
                 </div>
                 <Typography
                   style={{ marginLeft: 50 }}
-                  variant="body"
-                  color="textSecondary"
+                  variant="body1"
+                  color="secondary"
                 >
                   {item.name}
                 </Typography>

@@ -3,6 +3,8 @@ import {
   Card,
   Container,
   Grid,
+  IconButton,
+  InputAdornment,
   makeStyles,
   TextField,
   Typography,
@@ -13,6 +15,7 @@ import { regxEmail, regxPassword } from "../regular-Expression";
 import cookies from "js-cookies";
 import Header from "../layout/header";
 import Footer from "../layout/footer";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +45,7 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const [userNameErr, setUserNameErr] = useState(false);
   const [passwordErr, setPasswordErr] = useState(false);
+  const [isPassVisible, setIsPassVisible] = useState(false);
 
   const handleChange = async () => {
     if (!regxEmail.test(userName)) {
@@ -100,6 +104,7 @@ function Login(props) {
                       id="outlined-basic"
                       label="User Name"
                       variant="outlined"
+                      required
                       color="primary"
                       style={{ marginTop: 10 }}
                       onChange={(event) => {
@@ -116,8 +121,6 @@ function Login(props) {
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>
                     <TextField
-                      id="outlined-basic"
-                      label="Password"
                       variant="outlined"
                       onChange={(event) => {
                         setPasswordErr(false);
@@ -127,8 +130,31 @@ function Login(props) {
                       helperText={
                         passwordErr ? "please enter valid Password" : ""
                       }
-                      type="password"
                       fullWidth
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={() => {
+                                isPassVisible
+                                  ? setIsPassVisible(false)
+                                  : setIsPassVisible(true);
+                              }}
+                            >
+                              {isPassVisible ? (
+                                <Visibility fontSize="small" />
+                              ) : (
+                                <VisibilityOff fontSize="small" />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                      type={isPassVisible ? "text" : "password"}
+                      value={password}
+                      id="password"
+                      placeholder="Password"
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} className={classes.fieldStyle}>

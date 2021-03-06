@@ -96,7 +96,7 @@ export default function Header() {
         {list()}
       </SwipeableDrawer>
 
-      <AppBar position="static">
+      <AppBar position="static" elevation={1}>
         <Toolbar>
           <Link href="/">
             <IconButton
