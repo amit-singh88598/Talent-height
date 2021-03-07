@@ -23,7 +23,7 @@ a {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #c95796;
+  background-color: #db549e;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -33,9 +33,9 @@ a {
     linear,
     40% 0%,
     75% 84%,
-    from(#b3568f),
-    to(#bd6b94),
-    color-stop(0.6, #be75a8)
+    from(#d85ea9),
+    to(#d3689d),
+    color-stop(0.6, #c95ca8)
   );
 }
 
