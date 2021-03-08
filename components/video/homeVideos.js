@@ -1,17 +1,14 @@
 import {
   Avatar,
-  Button,
   Card,
   CardActionArea,
-  CardActions,
-  CardContent,
   CardMedia,
   Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import { useRouter } from "next/router";
 import React from "react";
-import ReactPlayer from "react-player";
 
 const useStyles = makeStyles((theme) => ({
   serviceName: {
@@ -42,83 +39,84 @@ const useStyles = makeStyles((theme) => ({
 const videos = [
   {
     name: "Amit Singh",
-    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
+    href: "song1.jpg",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
+    href: "song2.jpg",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
+    href: "song3.jpg",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
+    href: "song1.jpg",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
+    href: "song2.jpg",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
+    href: "song3.jpg",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
+    href: "song1.jpg",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
+    href: "song2.jpg",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
+    href: "song3.jpg",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
+    href: "song1.jpg",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
+    href: "song2.jpg",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
+    href: "song3.jpg",
     title: "Be Unique",
   },
   {
     name: "Amit Singh",
-    href: "https://www.youtube.com/watch?v=WzVMrgffjq0",
+    href: "song1.jpg",
     title: "Bad Boys For Life !",
   },
   {
     name: "Akash Kumar",
-    href: "https://www.youtube.com/watch?v=DMRRC0rwO_I",
+    href: "song2.jpg",
     title: "All time best",
   },
   {
     name: "Kamal",
-    href: "https://www.youtube.com/watch?v=fwbFdo0adHQ",
+    href: "song3.jpg",
     title: "Be Unique",
   },
 ];
 
 function HomeVideos(props) {
   const classes = useStyles();
+  const router = useRouter();
   return (
     <div>
       <div className={classes.scroll} id="scroller">
@@ -127,22 +125,23 @@ function HomeVideos(props) {
             <Grid item xs={12} sm={3} key={index}>
               <Card elevation={2} className={classes.cardStyle}>
                 <CardActionArea className={classes.serviceCard}>
-                  {/* <CardMedia
+                  <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     height="170"
                     image={item.href}
+                    onClick={() => router.push("/videos")}
                     title="Contemplative Reptile"
-                  > */}
-                  <ReactPlayer
+                  >
+                    {/* <ReactPlayer
                     light={true}
                     // playing={false}
                     // volume={null}
                     width="100%"
                     height="170px"
                     url={item.href}
-                  />
-                  {/* </CardMedia> */}
+                  /> */}
+                  </CardMedia>
                 </CardActionArea>
                 <div style={{ padding: 5, display: "flex" }}>
                   <Avatar

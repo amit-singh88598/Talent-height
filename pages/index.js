@@ -6,13 +6,13 @@ import {
   Grid,
   makeStyles,
 } from "@material-ui/core";
-import HomeVideos from "../components/homeVideos";
 import SideBar from "../components/sideBar";
 import Status from "../components/status";
 import Footer from "../layout/footer";
 import Header from "../layout/header";
 import { useRouter } from "next/router";
 import { useAuth } from "../auth";
+import HomeVideos from "../components/video/homeVideos";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,8 +1,6 @@
 import {
   Button,
-  ButtonGroup,
   Card,
-  CardContent,
   Link,
   List,
   ListItem,
@@ -21,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   scroll: {
     overflowY: "scroll",
     height: 540,
+  },
+  btnStyle: {
+    color: "#170000",
   },
 }));
 
@@ -65,27 +66,11 @@ function SideBar(props) {
     <div className={classes.root}>
       <div className={classes.scroll} id="scroller">
         <Card elevation={0}>
-          {/* <ButtonGroup
-            fullWidth
-            orientation="vertical"
-            color="primary"
-            aria-label="vertical contained primary button group"
-            variant="contained"
-          >
-            <Button fullWidth>Home</Button>
-            <Button fullWidth>Trending</Button>
-            <Button fullWidth>Subscription</Button>
-            <Button fullWidth>Original</Button>
-            <Button fullWidth>Library</Button>
-            <Button fullWidth>Your Videos</Button>
-            <Button fullWidth>History</Button>
-            <Button fullWidth>Watch Later</Button>
-          </ButtonGroup> */}
           <List>
             {navLinks.map((item) => (
               <ListItem key={item.name}>
                 <Link href={item.href} key={item.name}>
-                  <Button fullWidth color="secondary">
+                  <Button fullWidth className={classes.btnStyle}>
                     {item.name}
                   </Button>
                 </Link>
