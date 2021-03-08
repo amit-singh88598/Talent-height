@@ -6,6 +6,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import { useRouter } from "next/router";
 import React from "react";
 import ReactPlayer from "react-player";
 import Details from "./details";
@@ -39,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
 
 function Video(props) {
   const classes = useStyles();
+  const router = useRouter();
+  const { v } = router.query;
   return (
     <div className={classes.root}>
       <Card elevation={0} className={classes.cardStyle}>
@@ -56,7 +59,7 @@ function Video(props) {
             // volume={null}
             width="100%"
             height="432px"
-            url="https://www.youtube.com/watch?v=VNs_cCtdbPc"
+            url={"https://www.youtube.com/watch?v=" + v}
           />
           {/* </CardMedia> */}
         </CardActionArea>

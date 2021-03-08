@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
         setToken(userCookie.token);
       }
     }
-  });
+  }, []);
 
   return (
     <AuthContext.Provider

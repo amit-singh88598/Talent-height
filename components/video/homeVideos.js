@@ -130,7 +130,7 @@ function HomeVideos(props) {
                     alt="Contemplative Reptile"
                     height="170"
                     image={item.href}
-                    onClick={() => router.push("/videos")}
+                    onClick={() => router.push("/videos?v=lmNVNnaHBNI")}
                     title="Contemplative Reptile"
                   >
                     {/* <ReactPlayer
