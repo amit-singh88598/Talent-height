@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(5),
   },
   btnStyle: {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary.main,
     color: "#ffffff",
   },
 }));
@@ -137,6 +137,7 @@ function Details(props) {
                       variant="contained"
                       className={classes.btnStyle}
                       disableElevation
+                      color="primary"
                     >
                       subscribe
                     </Button>

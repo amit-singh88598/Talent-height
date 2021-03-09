@@ -10,7 +10,6 @@ import {
   withStyles,
 } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import Link from "next/link";
 import { MoreVert } from "@material-ui/icons";
 
 const BootstrapInput = withStyles((theme) => ({
@@ -50,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 40,
   },
   heading: {
-    // marginTop: 10,
     fontSize: "1.2em",
   },
   breakpoints: {
@@ -89,7 +87,6 @@ function UserComments(props) {
   return (
     <div className={classes.root}>
       <div>
-        {/* <Link href="/"> */}
         <div>
           <div className={classes.breakpoints}>
             <Card elevation={0}>
@@ -135,13 +132,10 @@ function UserComments(props) {
                         debitis quas aliquid. placeat qui corporis!
                       </Typography>
                     </Grid>
-                    {/* <Grid item>
-                        
-                      </Grid> */}
                   </Grid>
 
                   <Grid item>
-                    <Button variant="default" elevation={0}>
+                    <Button variant="contained" elevation={0}>
                       <MoreVert />
                     </Button>
                     {/* <Grid style={{ marginTop: 70 }}>
@@ -196,7 +190,6 @@ function UserComments(props) {
             </Card>
           </div>
         </div>
-        {/* </Link> */}
       </div>
     </div>
   );

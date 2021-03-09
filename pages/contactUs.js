@@ -9,7 +9,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import Header from "../layout/header";
+import SideBar from "../layout/sideBar";
 import Footer from "../layout/footer";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,12 +34,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// ContactUs page
+
 export default function ContactUs() {
   const classes = useStyles();
 
   return (
     <div>
-      <Header />
+      {/* Sidebar contains header and side toggle */}
+      <SideBar />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Contact Us | Talent-Height</title>

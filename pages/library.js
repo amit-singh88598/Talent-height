@@ -1,10 +1,13 @@
 import React from "react";
-import Header from "../layout/header";
+import SideBar from "../layout/sideBar";
+
+// Library Page
 
 function Library(props) {
   return (
     <div>
-      <Header />
+      {/* Sidebar contains header and side toggle */}
+      <SideBar />
       <h1>Library Page</h1>
     </div>
   );

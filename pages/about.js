@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// About Page
+
 export default function About() {
   const classes = useStyles();
   return (
@@ -63,7 +65,6 @@ export default function About() {
                 letterSpacing: "1.5px",
                 fontSize: "1.7em",
                 marginTop: 30,
-                // margin: 30,
                 marginBottom: 30,
                 textAlign: "justify",
                 marginLeft: 20,

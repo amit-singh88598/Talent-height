@@ -1,23 +1,15 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  Divider,
-  Grid,
-  makeStyles,
-} from "@material-ui/core";
-import SideBar from "../components/sideBar";
+import { Button, Divider, Grid, makeStyles } from "@material-ui/core";
+import SideBar from "../layout/sideBar";
 import Status from "../components/status";
 import Footer from "../layout/footer";
-import Header from "../layout/header";
 import { useRouter } from "next/router";
 import { useAuth } from "../auth";
 import HomeVideos from "../components/video/homeVideos";
+import Header from "../layout/header";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: 20,
-    // backgroundColor: "#f5f5f5",
   },
   searchBar: {
     paddingLeft: 150,
@@ -40,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Home Page
+
 export default function Home() {
   const classes = useStyles();
   const { isAuthenticatedUser } = useAuth();
@@ -53,21 +47,19 @@ export default function Home() {
       ) : (
         <div>
           <div className={classes.desktopView}>
-            <Header />
+            {/* Sidebar contains header and side toggle */}
+            <SideBar />
             <div className={classes.root}>
               <Grid container spacing={2}>
-                <Grid item xs={2} sm={2}>
-                  <SideBar />
-                </Grid>
-                <Grid item xs={10} sm={10}>
+                {/* <Grid item xs={1} sm={1}>
+            <SideBar />
+                </Grid> */}
+                <Grid item xs={12} sm={12}>
                   <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
                   <div className={classes.img}>
                     <Status />
-                    {/* <ImageOverlay
-                url={props.data.image}
-                onClick={handleImageUpload}
-              /> */}
                   </div>
+                  {/* Home Videos component */}
                   <HomeVideos />
                 </Grid>
               </Grid>
@@ -75,6 +67,8 @@ export default function Home() {
             <Divider />
             <Footer />
           </div>
+
+          {/* Mobile View Starts here */}
 
           <div className={classes.mobileView}>
             <Header />
@@ -87,15 +81,15 @@ export default function Home() {
                   <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
                   <div className={classes.img}>
                     <Status />
-                    {/* <ImageOverlay
-                url={props.data.image}
-                onClick={handleImageUpload}
-              /> */}
                   </div>
+                  {/* Home Videos component */}
                   <HomeVideos />
                 </Grid>
               </Grid>
             </div>
+
+            {/* Mobile Video ends here */}
+
             <Footer />
           </div>
         </div>

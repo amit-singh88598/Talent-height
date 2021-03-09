@@ -41,12 +41,19 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1em",
     },
   },
+  AppBar: {
+    backgroundColor: theme.palette.primary.light,
+  },
 }));
 
 const navLinks = [
   {
     href: "/",
     name: "Home",
+  },
+  {
+    href: "/uploads",
+    name: "Upload",
   },
   {
     href: "/login",
@@ -76,7 +83,10 @@ export default function Header() {
         {navLinks.map((item) => (
           <ListItem key={item.name}>
             <Link href={item.href} key={item.name}>
-              <Button color="inherit"> {item.name}</Button>
+              <Button style={{ color: "#000000" }} color="primary">
+                {" "}
+                {item.name}
+              </Button>
             </Link>
           </ListItem>
         ))}
@@ -96,13 +106,13 @@ export default function Header() {
         {list()}
       </SwipeableDrawer>
 
-      <AppBar position="static" elevation={1}>
+      <AppBar position="static" elevation={1} className={classes.AppBar}>
         <Toolbar>
           <Link href="/">
             <IconButton
               edge="start"
               className={classes.menuButton}
-              color="inherit"
+              color="primary"
               aria-label="menu"
             >
               {/* <MenuIcon /> */}
@@ -120,7 +130,11 @@ export default function Header() {
           <div className={classes.navLink}>
             {navLinks.map((item) => (
               <Link href={item.href} key={item.name}>
-                <Button style={{ margin: 5 }} size="small" color="inherit">
+                <Button
+                  style={{ margin: 5, color: "#000000" }}
+                  size="small"
+                  color="inherit"
+                >
                   {item.name}
                 </Button>
               </Link>
