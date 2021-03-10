@@ -52,13 +52,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Search Bar
+
 function SearchBar(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className={classes.search}>
         <div className={classes.searchIcon}>
-          {/* Search Icon */}
           <Search />
         </div>
         <InputBase

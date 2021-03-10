@@ -10,7 +10,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -92,20 +92,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Video Details Page
+
 function Details(props) {
   const classes = useStyles();
+  const router = useRouter();
   const theme = useTheme();
 
   return (
     <div className={classes.root}>
       <div>
-        {/* <Link href="/"> */}
         <div>
           <div className={classes.breakpoints}>
             <Card elevation={0}>
               <Grid container spacing={2}>
                 <Grid item>
-                  <Button>
+                  <Button onClick={() => router.push("")}>
                     <Avatar
                       alt="Remy Sharp"
                       src="profile.jpg"
@@ -116,13 +118,15 @@ function Details(props) {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Typography
-                        className={classes.heading}
-                        gutterBottom
-                        variant="h6"
-                      >
-                        IncInk
-                      </Typography>
+                      <a href={""} onClick={() => router.push("")}>
+                        <Typography
+                          className={classes.heading}
+                          gutterBottom
+                          variant="h6"
+                        >
+                          IncInk
+                        </Typography>
+                      </a>
                       <Typography
                         className={classes.subscribersCount}
                         gutterBottom
@@ -131,9 +135,6 @@ function Details(props) {
                         127K subscribers
                       </Typography>
                     </Grid>
-                    {/* <Grid item>
-                        
-                      </Grid> */}
                   </Grid>
 
                   <Grid item>
@@ -142,17 +143,10 @@ function Details(props) {
                       className={classes.btnStyle}
                       disableElevation
                       color="primary"
+                      onClick={() => router.push("")}
                     >
                       subscribe
                     </Button>
-                    {/* <Grid style={{ marginTop: 70 }}>
-                        <Rating
-                          name="read-only"
-                          value="asbjbhasjdsa"
-                          size="small"
-                          readOnly
-                        />
-                      </Grid> */}
                   </Grid>
                 </Grid>
               </Grid>
@@ -176,7 +170,7 @@ function Details(props) {
             <Card elevation={0}>
               <Grid container spacing={1}>
                 <Grid item xs={2} sm={2}>
-                  <Button>
+                  <Button onClick={() => router.push("")}>
                     <Avatar
                       alt="Remy Sharp"
                       src="profile.jpg"
@@ -186,13 +180,15 @@ function Details(props) {
                 </Grid>
                 <Grid item xs={6} sm={6} container>
                   <div style={{ marginLeft: 25 }}>
-                    <Typography
-                      className={classes.heading}
-                      gutterBottom
-                      variant="subtitle1"
-                    >
-                      IncInk
-                    </Typography>
+                    <a href={""} onClick={() => router.push("")}>
+                      <Typography
+                        className={classes.heading}
+                        gutterBottom
+                        variant="subtitle1"
+                      >
+                        IncInk
+                      </Typography>
+                    </a>
                     <Typography gutterBottom variant="subtitle1">
                       127K subscribers
                     </Typography>
@@ -203,6 +199,7 @@ function Details(props) {
                     variant="contained"
                     color="secondary"
                     disableElevation
+                    onClick={() => router.push("")}
                   >
                     subscribe
                   </Button>
@@ -222,7 +219,6 @@ function Details(props) {
             </Typography>
           </div>
         </div>
-        {/* </Link> */}
       </div>
     </div>
   );

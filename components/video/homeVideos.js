@@ -176,34 +176,48 @@ function HomeVideos(props) {
                     className={classes.small}
                     alt="A Sharp"
                     src="https://miro.medium.com/max/4260/1*uLRHo3iLlP_PYxdd6dX_Lw.jpeg"
+                    onClick={() => router.push("/")}
                   />
-                  <Typography
-                    style={{ marginLeft: 10, fontWeight: "bold", marginTop: 5 }}
-                    variant="subtitle2"
+                  <a
+                    href={""}
+                    onClick={() => router.push("/videos?v=WzVMrgffjq0")}
                   >
-                    {item.title}
-                  </Typography>
+                    <Typography
+                      style={{
+                        marginLeft: 10,
+                        fontWeight: "bold",
+                        marginTop: 5,
+                      }}
+                      variant="subtitle2"
+                    >
+                      {item.title}
+                    </Typography>
+                  </a>
                   <MoreVert style={{ marginLeft: 40 }} />
                 </div>
                 <Typography
-                  style={{ marginLeft: 50, fontSize: ".8em" }}
+                  style={{ marginLeft: 50, fontSize: ".8em", color: "#a9a9a9" }}
                   variant="body1"
-                  color="secondary"
+                  // color="secondary"
                 >
                   {item.name}
                 </Typography>
                 <div className={classes.details}>
                   <Typography
-                    style={{ marginLeft: 50, fontSize: ".9em" }}
+                    style={{
+                      marginLeft: 50,
+                      fontSize: ".9em",
+                      color: "#a9a9a9",
+                    }}
                     variant="subtitle2"
-                    color="secondary"
+                    // color="secondary"
                   >
                     {item.views}
                   </Typography>
                   <Typography
-                    style={{ fontSize: ".9em" }}
+                    style={{ fontSize: ".9em", color: "#a9a9a9" }}
                     variant="subtitle2"
-                    color="secondary"
+                    // color="secondary"
                   >
                     {item.time}
                   </Typography>

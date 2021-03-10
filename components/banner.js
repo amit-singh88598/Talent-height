@@ -14,10 +14,12 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width: "100%",
-    height: 500,
+    height: 600,
     objectFit: "cover",
   },
 }));
+
+// Banner Component For Home Page
 
 export default function Banner() {
   const classes = useStyles();
@@ -31,10 +33,10 @@ export default function Banner() {
           autoPlay={true}
           autoPlayInterval="2000"
         >
-          <img src="/Profile.jpg" className={classes.img} alt="" />
-          <img src="/Profile1.jpg" className={classes.img} alt="" />
-          <img src="/Profile2.jpg" className={classes.img} alt="" />
-          <img src="/Profile3.jpg" className={classes.img} alt="" />
+          <img src="/song3.jpg" className={classes.img} alt="" />
+          <img src="/photo1.jpg" className={classes.img} alt="" />
+          <img src="/profile2.jpg" className={classes.img} alt="" />
+          <img src="/profile3.jpg" className={classes.img} alt="" />
         </AliceCarousel>
       </Card>
     </div>
