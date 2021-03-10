@@ -24,13 +24,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 40,
   },
   contentText: {
-    color: theme.palette.primary.grey,
     fontSize: "1.1em",
     textAlign: "justify",
     textJustify: "interword",
     marginRight: 15,
   },
 }));
+
+// Terms And Conditions Page
 
 export default function TermsAndConditions() {
   const classes = useStyles();

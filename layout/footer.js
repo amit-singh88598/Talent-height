@@ -65,7 +65,7 @@ function Footer(props) {
           >
             {footerLinks.map((item, index) => (
               <div key={index}>
-                <Link href={item.href}>
+                <Link style={{ textDecoration: "none" }} href={item.href}>
                   <Chip
                     className={classes.cityStyle}
                     size="small"

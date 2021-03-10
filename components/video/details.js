@@ -83,8 +83,12 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(5),
   },
   btnStyle: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.background,
     color: "#ffffff",
+    // pointerEvents: "none",
+    "&:hover": {
+      backgroundColor: theme.palette.primary.background,
+    },
   },
 }));
 

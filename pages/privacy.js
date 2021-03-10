@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 40,
   },
   contentText: {
-    color: theme.palette.primary.grey,
     fontSize: "1.1em",
     textAlign: "justify",
     textJustify: "interword",
@@ -32,7 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TermsAndConditions() {
+// Privacy page
+
+export default function Privacy() {
   const classes = useStyles();
   return (
     <div>

@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "../auth";
 import HomeVideos from "../components/video/homeVideos";
 import Header from "../layout/header";
+import Banner from "../components/banner";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +57,7 @@ export default function Home() {
                 </Grid> */}
                 <Grid item xs={12} sm={12}>
                   <div className={classes.searchBar}>{/* <SearchBar /> */}</div>
+                  <Banner />
                   <div className={classes.img}>
                     <Status />
                   </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../layout/sideBar";
+import SideBar from "../../layout/sideBar";
 
 // Library Page
 

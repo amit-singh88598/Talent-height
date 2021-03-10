@@ -1,10 +1,13 @@
 import {
+  Box,
   Button,
   Card,
+  Chip,
   Container,
   Grid,
   IconButton,
   InputAdornment,
+  Link,
   makeStyles,
   TextField,
   Typography,
@@ -42,6 +45,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ffffff",
     color: "#ff148a",
     fontSize: "1.2em",
+  },
+  textStyle: {
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    padding: 20,
+  },
+  input: {
+    color: "#ffffff",
   },
 }));
 
@@ -94,9 +106,9 @@ function Login(props) {
                       fontSize: "2.5em",
                       display: "flex",
                       justifyContent: "center",
-                      color: "#ffffff",
                     }}
                     variant="h1"
+                    color="secondary"
                   >
                     Welcome back !
                   </Typography>
@@ -108,11 +120,17 @@ function Login(props) {
                       style={{ display: "flex", justifyContent: "center" }}
                     >
                       <TextField
-                        id="outlined-basic"
+                        // id="outlined-basic"
                         label="User Name"
-                        variant="outlined"
+                        // variant="outlined"
+                        InputProps={{
+                          className: classes.input,
+                        }}
+                        id="outlined-basic"
+                        label="User Name / Email"
+                        variant="filled"
                         required
-                        color="primary"
+                        color="secondary"
                         style={{ marginTop: 10 }}
                         onChange={(event) => {
                           setUserNameErr(false);
@@ -133,7 +151,18 @@ function Login(props) {
                       style={{ display: "flex", justifyContent: "center" }}
                     >
                       <TextField
-                        variant="outlined"
+                        id="outlined-basic"
+                        // id="password"
+                        label="User Name / Email"
+                        variant="filled"
+                        // variant="outlined"
+                        InputProps={{
+                          className: classes.input,
+                        }}
+                        color="secondary"
+                        InputProps={{
+                          className: classes.input,
+                        }}
                         onChange={(event) => {
                           setPasswordErr(false);
                           setPassword(event.target.value);
@@ -143,29 +172,28 @@ function Login(props) {
                           passwordErr ? "please enter valid Password" : ""
                         }
                         fullWidth
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <IconButton
-                                aria-label="toggle password visibility"
-                                onClick={() => {
-                                  isPassVisible
-                                    ? setIsPassVisible(false)
-                                    : setIsPassVisible(true);
-                                }}
-                              >
-                                {isPassVisible ? (
-                                  <Visibility fontSize="small" />
-                                ) : (
-                                  <VisibilityOff fontSize="small" />
-                                )}
-                              </IconButton>
-                            </InputAdornment>
-                          ),
-                        }}
+                        // InputProps={{
+                        //   endAdornment: (
+                        //     <InputAdornment position="end">
+                        //       <IconButton
+                        //         aria-label="toggle password visibility"
+                        //         onClick={() => {
+                        //           isPassVisible
+                        //             ? setIsPassVisible(false)
+                        //             : setIsPassVisible(true);
+                        //         }}
+                        //       >
+                        //         {isPassVisible ? (
+                        //           <Visibility fontSize="small" />
+                        //         ) : (
+                        //           <VisibilityOff fontSize="small" />
+                        //         )}
+                        //       </IconButton>
+                        //     </InputAdornment>
+                        //   ),
+                        // }}
                         type={isPassVisible ? "text" : "password"}
                         value={password}
-                        id="password"
                         placeholder="Password"
                       />
                     </Grid>
@@ -178,7 +206,7 @@ function Login(props) {
                     >
                       <Button
                         variant="contained"
-                        //   color="primary"
+                        color="secondary"
                         className={classes.btnStyle}
                         size="medium"
                         fullWidth
@@ -186,6 +214,32 @@ function Login(props) {
                       >
                         Log in
                       </Button>
+                    </Grid>
+                    <Link
+                      style={{ color: "#ffffff", marginLeft: 10 }}
+                      href="/forgetPassword"
+                    >
+                      Forgot your password?
+                    </Link>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={12}
+                      style={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <Box
+                        display="flex"
+                        flexWrap="wrap"
+                        alignContent="flex-start"
+                        className={classes.textStyle}
+                      >
+                        <div style={{ display: "flex", color: "#ffffff" }}>
+                          <Typography>New Here ? </Typography>
+                          <Link style={{ color: "#ffffff" }} href="/register">
+                            Register !
+                          </Link>
+                        </div>
+                      </Box>
                     </Grid>
                   </Grid>
                 </Card>

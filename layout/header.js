@@ -47,14 +47,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const navLinks = [
-  {
-    href: "/",
-    name: "Home",
-  },
-  {
-    href: "/uploads",
-    name: "Upload",
-  },
+  // {
+  //   href: "/",
+  //   name: "Home",
+  // },
+  // {
+  //   href: "/uploads",
+  //   name: "Upload",
+  // },
   {
     href: "/login",
     name: "Login",
@@ -108,7 +108,7 @@ export default function Header() {
 
       <AppBar position="static" elevation={1} className={classes.AppBar}>
         <Toolbar>
-          <Link href="/">
+          <Link href="/login">
             <IconButton
               edge="start"
               className={classes.menuButton}
@@ -116,16 +116,18 @@ export default function Header() {
               aria-label="menu"
             >
               {/* <MenuIcon /> */}
-              {/* <img
-                src="/cs.png"
-                width="140"
-                height="70"
+              <img
+                src="profile.jpg"
+                width="90"
+                height="40"
                 style={{ marginTop: 5, marginBottom: 5 }}
-              /> */}
+              />
             </IconButton>
           </Link>
-          <Typography className={classes.titleStyle}>Talent height</Typography>
-          <SearchBar />
+          {/* <Typography color="primary" className={classes.titleStyle}>
+            Talent height
+          </Typography> */}
+          {/* <SearchBar /> */}
           <Typography variant="h6" className={classes.title} />
           <div className={classes.navLink}>
             {navLinks.map((item) => (

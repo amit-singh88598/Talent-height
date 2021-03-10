@@ -10,12 +10,13 @@ import {
   ThumbDown,
   ThumbUp,
 } from "@material-ui/icons";
+import { Tooltip } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: 500,
   },
-});
+}));
 
 export default function VideoFunctions() {
   const classes = useStyles();
@@ -33,17 +34,32 @@ export default function VideoFunctions() {
     >
       <BottomNavigationAction label="Like" value="Like" icon={<ThumbUp />} />
       <BottomNavigationAction
+        // className={classes.btn}
         label="Disslike"
         value="Disslike"
         icon={<ThumbDown />}
       />
-      <BottomNavigationAction
-        label="Share"
-        value="Share"
-        icon={<Share size="small" />}
-      />
-      <BottomNavigationAction label="Add" value="Add" icon={<PlaylistAdd />} />
-      <BottomNavigationAction label="More" value="More" icon={<MoreHoriz />} />
+      <Tooltip disableFocusListener disableTouchListener title="Share">
+        <BottomNavigationAction
+          label="Share"
+          value="Share"
+          icon={<Share size="small" />}
+        />
+      </Tooltip>
+      <Tooltip disableFocusListener disableTouchListener title="Add">
+        <BottomNavigationAction
+          label="Add"
+          value="Add"
+          icon={<PlaylistAdd />}
+        />
+      </Tooltip>
+      <Tooltip disableFocusListener disableTouchListener title="More">
+        <BottomNavigationAction
+          label="More"
+          value="More"
+          icon={<MoreHoriz />}
+        />
+      </Tooltip>
     </BottomNavigation>
   );
 }

@@ -14,12 +14,13 @@ import Footer from "../layout/footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: 60,
+    marginTop: 50,
+    paddingTop: 120,
     paddingBottom: 120,
     paddingLeft: 90,
     paddingRight: 90,
     backgroundColor: "#79b321",
-    marginTop: -22,
+    // marginTop: -22,
   },
   content: {
     marginTop: 40,

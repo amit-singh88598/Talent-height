@@ -2,14 +2,10 @@ import {
   Button,
   Card,
   Container,
-  FormControl,
   Grid,
   IconButton,
   InputAdornment,
-  InputLabel,
   makeStyles,
-  MenuItem,
-  Select,
   TextField,
   Typography,
 } from "@material-ui/core";
@@ -56,6 +52,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffffff",
   },
 }));
+
+// Register Page
 
 function Register(props) {
   const classes = useStyles();

@@ -61,10 +61,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
     marginLeft: 80,
   },
-  scroll: {
-    overflowY: "scroll",
-    height: 200,
-  },
   mobbreakpoint: {
     [theme.breakpoints.up("md")]: {
       display: "none",

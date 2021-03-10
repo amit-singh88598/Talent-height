@@ -69,7 +69,7 @@ function Video(props) {
             volutpat ipsum.
           </Typography>
         </div>
-        <div style={{ display: "flex", marginTop: 10 }}>
+        <div style={{ display: "flex", marginTop: 10, marginBottom: 50 }}>
           <Typography style={{ color: "#656565" }} variant="subtitle2">
             12,45,745
           </Typography>

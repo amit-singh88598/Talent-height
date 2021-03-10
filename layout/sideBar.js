@@ -27,6 +27,7 @@ import {
 } from "@material-ui/icons";
 import SearchBar from "../components/search";
 import ProfilePopper from "./profilepopper";
+import UploadPopper from "./uploadPopper";
 
 const drawerWidth = 240;
 
@@ -152,14 +153,10 @@ const navLinks = [
 ];
 
 const navLink = [
-  {
-    href: "/",
-    name: "Home",
-  },
-  {
-    href: "/uploads",
-    name: "Upload",
-  },
+  // {
+  //   href: "/",
+  //   name: "Home",
+  // },
 ];
 
 export default function PersistentDrawerLeft() {
@@ -186,7 +183,6 @@ export default function PersistentDrawerLeft() {
       >
         <Toolbar>
           <IconButton
-            // color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -201,13 +197,20 @@ export default function PersistentDrawerLeft() {
               className={classes.menuButton}
               // color="inherit"
               aria-label="menu"
-            ></IconButton>
+            >
+              <img
+                src="/profile.jpg"
+                width="70"
+                height="50"
+                // style={{ marginTop: 5, marginBottom: 5 }}
+              />
+            </IconButton>
           </Link>
           <div
             style={{
               // flexGrow: ,
               marginLeft: "auto",
-              marginRight: 300,
+              marginRight: 350,
               justifyContent: "Center",
               justifyContent: "Center",
               // float: "right",
@@ -222,7 +225,7 @@ export default function PersistentDrawerLeft() {
               style={{ display: "flex" }}
               className={classes.navLink}
             >
-              {navLink.map((item) => (
+              {/* {navLink.map((item) => (
                 <Link
                   style={{ textDecoration: "none" }}
                   href={item.href}
@@ -237,10 +240,11 @@ export default function PersistentDrawerLeft() {
                     {item.name}
                   </Button>
                 </Link>
-              ))}
-              <div style={{}}>
-                <ProfilePopper />
-              </div>
+              ))} */}
+
+              <UploadPopper />
+
+              <ProfilePopper />
             </div>
           </div>
           <IconButton
