@@ -6,7 +6,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -28,6 +27,7 @@ import {
 import SearchBar from "../components/search";
 import ProfilePopper from "./profilepopper";
 import UploadPopper from "./uploadPopper";
+import { useRouter } from "next/router";
 
 const drawerWidth = 240;
 
@@ -91,8 +91,6 @@ const useStyles = makeStyles((theme) => ({
     padding: 5,
   },
 
-  //hjdjhabds
-
   root: {
     flexGrow: 1,
   },
@@ -116,7 +114,7 @@ const navLinks = [
     icon: <Home style={{ marginRight: 10 }} />,
   },
   {
-    href: "/trending",
+    href: "/SidebarPages/trending",
     name: "Trending",
     icon: <Whatshot style={{ marginRight: 10 }} />,
   },
@@ -161,6 +159,7 @@ const navLink = [
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
+  const router = useRouter();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -190,30 +189,21 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Toolbar> */}
           <Link href="/">
             <IconButton
               edge="start"
               className={classes.menuButton}
-              // color="inherit"
               aria-label="menu"
             >
-              <img
-                src="/profile.jpg"
-                width="70"
-                height="50"
-                // style={{ marginTop: 5, marginBottom: 5 }}
-              />
+              <img src="/profile.jpg" width="70" height="50" />
             </IconButton>
           </Link>
           <div
             style={{
-              // flexGrow: ,
               marginLeft: "auto",
               marginRight: 350,
               justifyContent: "Center",
               justifyContent: "Center",
-              // float: "right",
             }}
           >
             <SearchBar />
@@ -281,11 +271,7 @@ export default function PersistentDrawerLeft() {
         <List>
           {navLinks.map((item, index) => (
             <div key={index}>
-              <Link
-                style={{ textDecoration: "none" }}
-                href={item.href}
-                key={item.name}
-              >
+              <a href={item.href} onClick={() => router.push(item.href)}>
                 <ListItem button>
                   <ListItemIcon>
                     <Button
@@ -298,7 +284,7 @@ export default function PersistentDrawerLeft() {
                     </Button>
                   </ListItemIcon>
                 </ListItem>
-              </Link>
+              </a>
             </div>
           ))}
         </List>
@@ -306,90 +292,3 @@ export default function PersistentDrawerLeft() {
     </div>
   );
 }
-
-// import {
-//   Button,
-//   Card,
-//   Link,
-//   List,
-//   ListItem,
-//   makeStyles,
-// } from "@material-ui/core";
-// import React, { useState } from "react";
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     marginTop: 20,
-//     paddingBottom: 50,
-//     [theme.breakpoints.down("sm")]: {
-//       display: "none",
-//     },
-//   },
-//   scroll: {
-//     overflowY: "scroll",
-//     height: 540,
-//   },
-//   btnStyle: {
-//     color: "#170000",
-//   },
-// }));
-
-// const navLinks = [
-//   {
-//     href: "/",
-//     name: "Home",
-//   },
-//   {
-//     href: "/trending",
-//     name: "Trending",
-//   },
-//   {
-//     href: "/subscription",
-//     name: "Subscription",
-//   },
-//   {
-//     href: "/originals",
-//     name: "Originals",
-//   },
-//   {
-//     href: "/library",
-//     name: "Library",
-//   },
-//   {
-//     href: "/yourVideos",
-//     name: "Your Videos",
-//   },
-//   {
-//     href: "/history",
-//     name: "History",
-//   },
-//   {
-//     href: "/watchLater",
-//     name: "Watch Later",
-//   },
-// ];
-
-// function SideBar(props) {
-//   const classes = useStyles();
-//   return (
-//     <div className={classes.root}>
-//       <div className={classes.scroll} id="scroller">
-//         <Card elevation={0}>
-//           <List>
-//             {navLinks.map((item) => (
-//               <ListItem key={item.name}>
-//                 <Link href={item.href} key={item.name}>
-//                   <Button fullWidth className={classes.btnStyle}>
-//                     {item.name}
-//                   </Button>
-//                 </Link>
-//               </ListItem>
-//             ))}
-//           </List>
-//         </Card>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default SideBar;

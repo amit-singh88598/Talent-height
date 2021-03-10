@@ -22,25 +22,11 @@ import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   paddingBottom: 150,
-  //   backgroundColor: "#ff148a",
-  // },
   card: {
     marginTop: 100,
     marginBottom: 230,
     backgroundColor: "#ff148a",
   },
-  // button: {
-  //   display: "block",
-  //   marginTop: theme.spacing(2),
-  // },
-  // formControl: {
-  //   margin: theme.spacing(1),
-  //   minWidth: 120,
-  // },
   btnStyle: {
     backgroundColor: "#ffffff",
     color: "#ff148a",
@@ -215,12 +201,13 @@ function Login(props) {
                         Log in
                       </Button>
                     </Grid>
-                    <Link
-                      style={{ color: "#ffffff", marginLeft: 10 }}
+                    <a
                       href="/forgetPassword"
+                      onClick={() => router.push("/forgetPassword")}
+                      style={{ color: "#ffffff", marginLeft: 10 }}
                     >
                       Forgot your password?
-                    </Link>
+                    </a>
                     <Grid
                       item
                       xs={12}
@@ -235,9 +222,13 @@ function Login(props) {
                       >
                         <div style={{ display: "flex", color: "#ffffff" }}>
                           <Typography>New Here ? </Typography>
-                          <Link style={{ color: "#ffffff" }} href="/register">
+                          <a
+                            href="/register"
+                            onClick={() => router.push("/register")}
+                            style={{ color: "#ffffff" }}
+                          >
                             Register !
-                          </Link>
+                          </a>
                         </div>
                       </Box>
                     </Grid>

@@ -10,7 +10,7 @@ import Link from "next/link";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import SearchBar from "../components/search";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,14 +47,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const navLinks = [
-  // {
-  //   href: "/",
-  //   name: "Home",
-  // },
-  // {
-  //   href: "/uploads",
-  //   name: "Upload",
-  // },
   {
     href: "/login",
     name: "Login",
@@ -67,6 +59,7 @@ const navLinks = [
 
 export default function Header() {
   const classes = useStyles();
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = () => {
@@ -80,14 +73,16 @@ export default function Header() {
   const list = () => (
     <div role="presentation" className={classes.sidebar}>
       <List>
-        {navLinks.map((item) => (
-          <ListItem key={item.name}>
-            <Link href={item.href} key={item.name}>
-              <Button style={{ color: "#000000" }} color="primary">
-                {" "}
+        {navLinks.map((item, index) => (
+          <ListItem key={index}>
+            <a href={item.href} onClick={() => router.push(item.href)}>
+              <Button
+                style={{ color: "#000000", fontWeight: 900 }}
+                color="primary"
+              >
                 {item.name}
               </Button>
-            </Link>
+            </a>
           </ListItem>
         ))}
       </List>
@@ -108,7 +103,7 @@ export default function Header() {
 
       <AppBar position="static" elevation={1} className={classes.AppBar}>
         <Toolbar>
-          <Link href="/login">
+          <a href="/login" onClick={() => router.push("/login")}>
             <IconButton
               edge="start"
               className={classes.menuButton}
@@ -117,29 +112,36 @@ export default function Header() {
             >
               {/* <MenuIcon /> */}
               <img
-                src="profile.jpg"
+                src="profile1.jpg"
                 width="90"
                 height="40"
                 style={{ marginTop: 5, marginBottom: 5 }}
               />
             </IconButton>
-          </Link>
+          </a>
           {/* <Typography color="primary" className={classes.titleStyle}>
             Talent height
           </Typography> */}
           {/* <SearchBar /> */}
           <Typography variant="h6" className={classes.title} />
-          <div className={classes.navLink}>
-            {navLinks.map((item) => (
-              <Link href={item.href} key={item.name}>
-                <Button
-                  style={{ margin: 5, color: "#000000" }}
-                  size="small"
-                  color="inherit"
-                >
-                  {item.name}
-                </Button>
-              </Link>
+          <div style={{ display: "flex" }} className={classes.navLink}>
+            {navLinks.map((item, index) => (
+              <div key={index}>
+                <a href={item.href} onClick={() => router.push(item.href)}>
+                  <Button
+                    style={{
+                      margin: 5,
+                      color: "#000000",
+                      fontWeight: 600,
+                      fontSize: "0.8em",
+                    }}
+                    size="small"
+                    color="inherit"
+                  >
+                    {item.name}
+                  </Button>
+                </a>
+              </div>
             ))}
           </div>
           <IconButton

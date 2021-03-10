@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   textStyle: {
@@ -48,6 +49,7 @@ const footerLinks = [
 
 function Footer(props) {
   const classes = useStyles();
+  const router = useRouter();
   return (
     <div>
       <Grid container>
@@ -65,13 +67,20 @@ function Footer(props) {
           >
             {footerLinks.map((item, index) => (
               <div key={index}>
-                <Link style={{ textDecoration: "none" }} href={item.href}>
-                  <Chip
+                <a
+                  className={classes.cityStyle}
+                  href={item.href}
+                  onClick={() => router.push(item.href)}
+                >
+                  {item.name}
+                </a>
+                {/* <Link style={{ textDecoration: "none" }} href={item.href}> */}
+                {/* <Chip
                     className={classes.cityStyle}
                     size="small"
                     label={item.name}
                   />
-                </Link>
+                </Link> */}
               </div>
             ))}
           </Box>

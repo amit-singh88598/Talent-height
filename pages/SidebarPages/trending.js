@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../layout/header";
+import SideBar from "../../layout/sideBar";
 
 function Trending(props) {
   return (
     <div>
-      <Header />
+      <SideBar />
       <h1>Trending Page</h1>
     </div>
   );
