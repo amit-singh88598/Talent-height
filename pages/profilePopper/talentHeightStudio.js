@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
-import SideBar from "../../layout/sideBar";
+import SideBar from "../../layout/sideBar/sideBar";
 
 function TalentHeightStudio(props) {
   return (

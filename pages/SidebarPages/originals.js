@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../layout/header";
+import SideBar from "../layout/sideBar/sideBar";
 
 function Originals(props) {
   return (
     <div>
-      <Header />
+      <SideBar />
       <h1>Originals Page</h1>
     </div>
   );

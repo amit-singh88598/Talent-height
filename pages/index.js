@@ -1,5 +1,4 @@
 import { Button, Divider, Grid, makeStyles } from "@material-ui/core";
-import SideBar from "../layout/sideBar";
 import Status from "../components/status";
 import Footer from "../layout/footer";
 import { useRouter } from "next/router";
@@ -7,6 +6,7 @@ import { useAuth } from "../auth";
 import HomeVideos from "../components/video/homeVideos";
 import Header from "../layout/header";
 import Banner from "../components/banner";
+import SideBar from "../layout/sideBar/sideBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {

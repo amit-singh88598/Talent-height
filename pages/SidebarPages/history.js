@@ -1,7 +1,5 @@
 import React from "react";
-import Header from "../../layout/header";
-
-import SideBar from "../../layout/sideBar";
+import SideBar from "../layout/sideBar/sideBar";
 
 // History Page
 

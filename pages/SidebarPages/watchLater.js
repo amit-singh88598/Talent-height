@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../layout/header";
+import SideBar from "../layout/sideBar/sideBar";
 
 function WatchLater(props) {
   return (
     <div>
-      <Header />
+      <SideBar />
       <h1>Watch Later</h1>
     </div>
   );

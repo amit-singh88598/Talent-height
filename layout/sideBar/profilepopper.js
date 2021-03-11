@@ -8,10 +8,12 @@ import {
   History,
   Home,
   OndemandVideo,
+  Router,
   Subscriptions,
   VideoLibrary,
   Whatshot,
 } from "@material-ui/icons";
+import { useRouter } from "next/router";
 
 const navLinks = [
   {
@@ -57,6 +59,7 @@ const navLinks = [
 ];
 
 export default function ProfilePopper() {
+  const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -88,10 +91,10 @@ export default function ProfilePopper() {
       >
         {navLinks.map((item, index) => (
           <div key={index}>
-            <Link
-              style={{ textDecoration: "none" }}
+            <a
               href={item.href}
-              key={item.name}
+              style={{ textDecoration: "none" }}
+              onClick={() => router.push(item.href)}
             >
               <Button
                 style={{
@@ -104,7 +107,7 @@ export default function ProfilePopper() {
                 {item.icon}
                 {item.name}
               </Button>
-            </Link>
+            </a>
           </div>
         ))}
       </Menu>

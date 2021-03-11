@@ -9,9 +9,8 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
-import { PhotoCamera, Publish } from "@material-ui/icons";
 import React from "react";
-import SideBar from "../layout/sideBar";
+import SideBar from "../layout/sideBar/sideBar";
 
 const useStyle = makeStyles((theme) => ({
   paperStyle: {

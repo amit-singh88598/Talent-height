@@ -13,7 +13,6 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import { Button, Link } from "@material-ui/core";
 import {
   AvTimer,
   CropOriginal,
@@ -24,10 +23,10 @@ import {
   VideoLibrary,
   Whatshot,
 } from "@material-ui/icons";
-import SearchBar from "../components/search";
-import ProfilePopper from "./profilepopper";
-import UploadPopper from "./uploadPopper";
 import { useRouter } from "next/router";
+import UploadPopper from "../sideBar/uploadPopper";
+import ProfilePopper from "../sideBar/profilepopper";
+import SearchBar from "../../components/searchBar";
 
 const drawerWidth = 240;
 
@@ -89,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btnStyle: {
     padding: 5,
+    color: theme.palette.secondary.grey,
   },
 
   root: {
@@ -119,32 +119,32 @@ const navLinks = [
     icon: <Whatshot style={{ marginRight: 10 }} />,
   },
   {
-    href: "/subscription",
+    href: "/SidebarPages/subscription",
     name: "Subscription",
     icon: <Subscriptions style={{ marginRight: 10 }} />,
   },
   {
-    href: "/originals",
+    href: "/SidebarPages/originals",
     name: "Originals",
     icon: <CropOriginal style={{ marginRight: 10 }} />,
   },
   {
-    href: "/library",
+    href: "/SidebarPages/library",
     name: "Library",
     icon: <VideoLibrary style={{ marginRight: 10 }} />,
   },
   {
-    href: "/yourVideos",
+    href: "/SidebarPages/yourVideos",
     name: "Your Videos",
     icon: <OndemandVideo style={{ marginRight: 10 }} />,
   },
   {
-    href: "/history",
+    href: "/SidebarPages/history",
     name: "History",
     icon: <History style={{ marginRight: 10 }} />,
   },
   {
-    href: "/watchLater",
+    href: "/SidebarPages/watchLater",
     name: "Watch Later",
     icon: <AvTimer style={{ marginRight: 10 }} />,
   },
@@ -189,7 +189,7 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Link href="/">
+          <a href="/" onClick={() => router.push("/")}>
             <IconButton
               edge="start"
               className={classes.menuButton}
@@ -197,7 +197,7 @@ export default function PersistentDrawerLeft() {
             >
               <img src="/profile.jpg" width="70" height="50" />
             </IconButton>
-          </Link>
+          </a>
           <div
             style={{
               marginLeft: "auto",
@@ -232,7 +232,11 @@ export default function PersistentDrawerLeft() {
                 </Link>
               ))} */}
 
+              {/* Upload Video */}
+
               <UploadPopper />
+
+              {/* User Profile Popper */}
 
               <ProfilePopper />
             </div>
@@ -240,8 +244,6 @@ export default function PersistentDrawerLeft() {
           <IconButton
             edge="start"
             className={classes.toggleButton}
-            // onClick={toggleDrawer}
-            // color="inherit"
             aria-label="menu"
           >
             <MenuIcon />
@@ -273,15 +275,9 @@ export default function PersistentDrawerLeft() {
             <div key={index}>
               <a href={item.href} onClick={() => router.push(item.href)}>
                 <ListItem button>
-                  <ListItemIcon>
-                    <Button
-                      fullWidth
-                      className={classes.btnStyle}
-                      disableElevation
-                    >
-                      {item.icon}
-                      {item.name}
-                    </Button>
+                  <ListItemIcon className={classes.btnStyle}>
+                    {item.icon}
+                    {item.name}
                   </ListItemIcon>
                 </ListItem>
               </a>

@@ -1,8 +1,9 @@
 import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card } from "@material-ui/core";
+import { Card, CardMedia } from "@material-ui/core";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Banner() {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div className={classes.root}>
@@ -33,10 +35,42 @@ export default function Banner() {
           autoPlay={true}
           autoPlayInterval="2000"
         >
-          <img src="/song3.jpg" className={classes.img} alt="" />
-          <img src="/photo1.jpg" className={classes.img} alt="" />
-          <img src="/profile2.jpg" className={classes.img} alt="" />
-          <img src="/profile3.jpg" className={classes.img} alt="" />
+          <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            // height="170"
+            className={classes.img}
+            image="photo1.jpg"
+            onClick={() => router.push("/videos?v=WzVMrgffjq0")}
+            title="Contemplative Reptile"
+          />
+          <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            // height="170"
+            className={classes.img}
+            image="profile2.jpg"
+            onClick={() => router.push("/videos?v=WzVMrgffjq0")}
+            title="Contemplative Reptile"
+          />
+          <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            // height="170"
+            className={classes.img}
+            image="photo1.jpg"
+            onClick={() => router.push("/videos?v=WzVMrgffjq0")}
+            title="Contemplative Reptile"
+          />
+          <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            // height="170"
+            className={classes.img}
+            image="profile2.jpg"
+            onClick={() => router.push("/videos?v=WzVMrgffjq0")}
+            title="Contemplative Reptile"
+          />
         </AliceCarousel>
       </Card>
     </div>

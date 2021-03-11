@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../layout/header";
+import SideBar from "../layout/sideBar/sideBar";
 
 function YourVideos(props) {
   return (
     <div>
-      <Header />
+      <SideBar />
       <h2>Your Videos</h2>
     </div>
   );

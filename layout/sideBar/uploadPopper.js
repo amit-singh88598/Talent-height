@@ -1,19 +1,9 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
-import { Avatar, Link, Tooltip } from "@material-ui/core";
-import {
-  AvTimer,
-  CloudUpload,
-  CropOriginal,
-  History,
-  Home,
-  OndemandVideo,
-  Subscriptions,
-  VideoCall,
-  VideoLibrary,
-  Whatshot,
-} from "@material-ui/icons";
+import { Tooltip } from "@material-ui/core";
+import { Home, VideoCall } from "@material-ui/icons";
+import { Router } from "next/router";
 
 export default function UploadPopper() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -48,19 +38,27 @@ export default function UploadPopper() {
         onClose={handleClose}
       >
         <div>
-          <Link style={{ textDecoration: "none" }} href="/uploads">
+          <a
+            href="/uploads"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              justifyContent: "flex-start",
+            }}
+            onClick={() => Router.push("/uploads")}
+          >
             <Button
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
-                //   padding: 20,
+                padding: 20,
               }}
               fullWidth
             >
               <Home style={{ marginRight: 10 }} />
               Upload Video
             </Button>
-          </Link>
+          </a>
         </div>
       </Menu>
     </div>

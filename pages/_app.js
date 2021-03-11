@@ -13,7 +13,7 @@ const theme = createMuiTheme({
     secondary: {
       main: "#ffffff", // White
       light: "#68991c", // Green Color
-      grey: "#a9a9a9", // darkGrey
+      grey: "#403e3e", // darkGrey
       background: "#dfe4eb", //Light Grey
     },
   },
