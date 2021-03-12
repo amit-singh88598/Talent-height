@@ -195,7 +195,7 @@ export default function PersistentDrawerLeft() {
               className={classes.menuButton}
               aria-label="menu"
             >
-              <img src="/profile.jpg" width="70" height="50" />
+              <img src="/talent.png" width="60" height="40" />
             </IconButton>
           </a>
           <div

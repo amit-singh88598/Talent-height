@@ -39,13 +39,13 @@ export default function UploadPopper() {
       >
         <div>
           <a
-            href="/uploads"
+            href="/uploadVideos"
             style={{
               textDecoration: "none",
               display: "flex",
               justifyContent: "flex-start",
             }}
-            onClick={() => Router.push("/uploads")}
+            onClick={() => Router.push("/uploadVideos")}
           >
             <Button
               style={{

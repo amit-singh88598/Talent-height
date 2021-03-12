@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import Upload from "../components/upload";
 import SideBar from "../layout/sideBar/sideBar";
 
 const useStyle = makeStyles((theme) => ({
@@ -40,7 +41,7 @@ const useStyle = makeStyles((theme) => ({
 
 // Video Upload Page
 
-function Uploads(props) {
+function UploadVideos(props) {
   const classes = useStyle();
   return (
     <div>
@@ -116,9 +117,10 @@ function Uploads(props) {
             </Link>
           </div>
         </Card>
+        {/* <Upload /> */}
       </Container>
     </div>
   );
 }
 
-export default Uploads;
+export default UploadVideos;

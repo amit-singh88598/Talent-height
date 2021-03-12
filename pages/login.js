@@ -23,9 +23,9 @@ import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    marginTop: 100,
-    marginBottom: 100,
-    padding: 20,
+    marginTop: 70,
+    marginBottom: 70,
+    padding: 50,
     // backgroundColor: "#ff148a",
   },
   btnStyle: {
@@ -93,6 +93,7 @@ function Login(props) {
                       textAlign: "center",
                       fontSize: "2.5em",
                       display: "flex",
+                      marginTop: 20,
                       justifyContent: "center",
                     }}
                     variant="h1"

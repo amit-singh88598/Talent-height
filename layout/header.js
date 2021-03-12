@@ -112,8 +112,8 @@ export default function Header() {
             >
               {/* <MenuIcon /> */}
               <img
-                src="profile1.jpg"
-                width="90"
+                src="/talent.png"
+                width="70"
                 height="40"
                 style={{ marginTop: 5, marginBottom: 5 }}
               />
@@ -130,13 +130,14 @@ export default function Header() {
                 <a href={item.href} onClick={() => router.push(item.href)}>
                   <Button
                     style={{
-                      margin: 5,
-                      color: "#000000",
+                      margin: 10,
+                      color: "#cf0404",
                       fontWeight: 600,
-                      fontSize: "0.8em",
+                      fontSize: "1em",
+                      fontFamily: "Roboto Slab",
                     }}
                     size="small"
-                    color="inherit"
+                    // color="inherit"
                   >
                     {item.name}
                   </Button>
