@@ -51,7 +51,7 @@ export default function UploadPopper() {
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
-                padding: 20,
+                padding: 15,
               }}
               fullWidth
             >

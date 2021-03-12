@@ -24,12 +24,13 @@ import { useRouter } from "next/router";
 const useStyles = makeStyles((theme) => ({
   card: {
     marginTop: 100,
-    marginBottom: 230,
-    backgroundColor: "#ff148a",
+    marginBottom: 100,
+    padding: 20,
+    // backgroundColor: "#ff148a",
   },
   btnStyle: {
-    backgroundColor: "#ffffff",
-    color: "#ff148a",
+    // backgroundColor: "#ffffff",
+    // color: "#ff148a",
     fontSize: "1.2em",
   },
   textStyle: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 20,
   },
   input: {
-    color: "#ffffff",
+    color: "#000000",
   },
 }));
 
@@ -80,12 +81,13 @@ function Login(props) {
   return (
     <div>
       <Header />
-      <div style={{ backgroundColor: "#ff148a" }}>
+      {/* <div style={{ backgroundColor: "#ff148a" }}> */}
+      <div>
         <Container component="main">
           <Grid spacing={2}>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <Grid item xs={12} sm={7}>
-                <Card elevation={3} className={classes.card} elevation={0}>
+              <Grid item xs={12} sm={7} elevation={4}>
+                <Card elevation={3} className={classes.card} elevation={2}>
                   <Typography
                     style={{
                       textAlign: "center",
@@ -94,7 +96,6 @@ function Login(props) {
                       justifyContent: "center",
                     }}
                     variant="h1"
-                    color="secondary"
                   >
                     Welcome back !
                   </Typography>
@@ -106,17 +107,15 @@ function Login(props) {
                       style={{ display: "flex", justifyContent: "center" }}
                     >
                       <TextField
-                        // id="outlined-basic"
-                        label="User Name"
-                        // variant="outlined"
-                        InputProps={{
-                          className: classes.input,
-                        }}
                         id="outlined-basic"
+                        variant="outlined"
+                        // InputProps={{
+                        //   className: classes.input,
+                        // }}
                         label="User Name / Email"
-                        variant="filled"
+                        // variant="filled"
                         required
-                        color="secondary"
+                        // color="secondary"
                         style={{ marginTop: 10 }}
                         onChange={(event) => {
                           setUserNameErr(false);
@@ -127,7 +126,7 @@ function Login(props) {
                           userNameErr ? "Please enter valid User Name" : ""
                         }
                         fullWidth
-                        autoFocus
+                        // autoFocus
                       />
                     </Grid>
                     <Grid
@@ -137,15 +136,14 @@ function Login(props) {
                       style={{ display: "flex", justifyContent: "center" }}
                     >
                       <TextField
-                        id="outlined-basic"
-                        // id="password"
-                        label="User Name / Email"
-                        variant="filled"
-                        // variant="outlined"
-                        InputProps={{
-                          className: classes.input,
-                        }}
-                        color="secondary"
+                        id="password"
+                        variant="outlined"
+                        required
+                        label="Password"
+                        // InputProps={{
+                        //   className: classes.input,
+                        // }}
+                        // color="secondary"
                         InputProps={{
                           className: classes.input,
                         }}
@@ -158,26 +156,26 @@ function Login(props) {
                           passwordErr ? "please enter valid Password" : ""
                         }
                         fullWidth
-                        // InputProps={{
-                        //   endAdornment: (
-                        //     <InputAdornment position="end">
-                        //       <IconButton
-                        //         aria-label="toggle password visibility"
-                        //         onClick={() => {
-                        //           isPassVisible
-                        //             ? setIsPassVisible(false)
-                        //             : setIsPassVisible(true);
-                        //         }}
-                        //       >
-                        //         {isPassVisible ? (
-                        //           <Visibility fontSize="small" />
-                        //         ) : (
-                        //           <VisibilityOff fontSize="small" />
-                        //         )}
-                        //       </IconButton>
-                        //     </InputAdornment>
-                        //   ),
-                        // }}
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={() => {
+                                  isPassVisible
+                                    ? setIsPassVisible(false)
+                                    : setIsPassVisible(true);
+                                }}
+                              >
+                                {isPassVisible ? (
+                                  <Visibility fontSize="small" />
+                                ) : (
+                                  <VisibilityOff fontSize="small" />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                        }}
                         type={isPassVisible ? "text" : "password"}
                         value={password}
                         placeholder="Password"
@@ -192,7 +190,7 @@ function Login(props) {
                     >
                       <Button
                         variant="contained"
-                        color="secondary"
+                        color="primary"
                         className={classes.btnStyle}
                         size="medium"
                         fullWidth
@@ -204,7 +202,7 @@ function Login(props) {
                     <a
                       href="/forgetPassword"
                       onClick={() => router.push("/forgetPassword")}
-                      style={{ color: "#ffffff", marginLeft: 10 }}
+                      style={{ marginLeft: 10 }}
                     >
                       Forgot your password?
                     </a>
@@ -220,12 +218,12 @@ function Login(props) {
                         alignContent="flex-start"
                         className={classes.textStyle}
                       >
-                        <div style={{ display: "flex", color: "#ffffff" }}>
+                        <div style={{ display: "flex" }}>
                           <Typography>New Here ? </Typography>
                           <a
                             href="/register"
                             onClick={() => router.push("/register")}
-                            style={{ color: "#ffffff" }}
+                            style={{}}
                           >
                             Register !
                           </a>

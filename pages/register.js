@@ -27,13 +27,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
-    paddingBottom: 150,
-    backgroundColor: "#ff148a",
+    // paddingBottom: 150,
+    // backgroundColor: "#ff148a",
   },
   card: {
     marginTop: 80,
-    marginBottom: 100,
-    backgroundColor: "#ff148a",
+    marginBottom: 80,
+    padding: 20,
+    // backgroundColor: "#ff148a",
   },
   button: {
     display: "block",
@@ -44,12 +45,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120,
   },
   btnStyle: {
-    backgroundColor: "#ffffff",
-    color: "#ff148a",
+    // backgroundColor: "#ffffff",
+    // color: "#ff148a",
     fontSize: "1.2em",
   },
   textFieldStyle: {
-    color: "#ffffff",
+    // color: "#ffffff",
   },
 }));
 
@@ -133,19 +134,18 @@ function Register(props) {
   return (
     <div>
       <Header />
-      <div style={{ backgroundColor: "#ff148a" }}>
+      <div>
         <Container component="main">
           <Grid container spacing={2}>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Grid item xs={12} sm={7}>
-                <Card elevation={3} className={classes.card} elevation={0}>
+                <Card elevation={3} className={classes.card} elevation={2}>
                   <Typography
                     style={{
                       textAlign: "center",
                       fontSize: "2.5em",
                       display: "flex",
                       justifyContent: "center",
-                      color: "#ffffff",
                     }}
                     variant="h1"
                   >
@@ -175,7 +175,7 @@ function Register(props) {
                         }
                         fullWidth
                         placeholder="User Name"
-                        autoFocus
+                        // autoFocus
                       />
                     </Grid>
                     <Grid
@@ -359,6 +359,7 @@ function Register(props) {
                         className={classes.btnStyle}
                         size="large"
                         fullWidth
+                        color="primary"
                         onClick={handleChange}
                       >
                         Sign Up

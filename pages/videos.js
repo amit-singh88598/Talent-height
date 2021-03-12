@@ -2,7 +2,7 @@ import { Divider, Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import Details from "../components/video/details";
 import Video from "../components/video/video";
-import SideBar from "../layout/sideBar";
+import SideBar from "../layout/sideBar/sideBar";
 import WriteComments from "../components/video/writeComments";
 import UserComments from "../components/video/userComments";
 import RecomandedVideos from "../components/video/recomandedVideos";

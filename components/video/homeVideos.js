@@ -7,9 +7,9 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { MoreVert } from "@material-ui/icons";
 import { useRouter } from "next/router";
 import React from "react";
+import More from "./more";
 
 const useStyles = makeStyles((theme) => ({
   serviceName: {
@@ -193,7 +193,7 @@ function HomeVideos(props) {
                       {item.title}
                     </Typography>
                   </a>
-                  <MoreVert style={{ marginLeft: 40 }} />
+                  <More style={{ marginTop: 80 }} />
                 </div>
                 <Typography
                   style={{ marginLeft: 50, fontSize: ".8em", color: "#a9a9a9" }}

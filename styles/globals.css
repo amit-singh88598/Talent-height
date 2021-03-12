@@ -23,19 +23,19 @@ a {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #df84c8;
+  background-color: #a798a3;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #ce6da9;
+  background-color: #c9c1c6;
   background-image: -webkit-gradient(
     linear,
     40% 0%,
     75% 84%,
-    from(#d872b1),
-    to(#dd7ead),
-    color-stop(0.6, #df87c4)
+    from(#b4aeb2),
+    to(#cec8cb),
+    color-stop(0.6, #bbb0b8)
   );
 }
 
